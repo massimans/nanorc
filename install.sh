@@ -16,6 +16,17 @@ _fetch_sources(){
   rm -rf nanorc-master
   rm /tmp/nanorc.zip
 }
+_install_nano(){
+  wget -O /tmp/nano.tar.gz https://www.nano-editor.org/dist/v6/nano-6.3.tar.gz
+  cd /tmp
+  tar -xvf nano.tar.gz 
+  cd nano-6.3
+  ./configure
+  make
+  make install
+  rm -rf nano-6.3
+  rm /tmp/nano.tar.gz -f
+}
 
 _update_nanorc(){
   touch ~/.nanorc
@@ -45,6 +56,7 @@ case "$1" in
 esac
 
 _fetch_sources;
+_install_nano;
 if [ $UPDATE_LITE ];
 then
   _update_nanorc_lite
