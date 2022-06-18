@@ -24,6 +24,7 @@ _install_nano(){
   ./configure
   make
   make install
+  ln -s /usr/local/bin/nano /usr/bin/nano
   rm -rf nano-6.3
   rm /tmp/nano.tar.gz -f
 }
