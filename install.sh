@@ -17,15 +17,15 @@ _fetch_sources(){
   rm /tmp/nanorc.zip
 }
 _install_nano(){
-  wget -O /tmp/nano.tar.gz https://www.nano-editor.org/dist/v6/nano-6.3.tar.gz
+  wget -O /tmp/nano.tar.gz https://www.nano-editor.org/dist/v6/nano-6.4.tar.gz
   cd /tmp
   tar -xvf nano.tar.gz 
-  cd nano-6.3
+  cd nano-6.4
   ./configure
   make
   make install
   ln -s /usr/local/bin/nano /usr/bin/nano
-  rm -rf nano-6.3
+  rm -rf nano-6.4
   rm /tmp/nano.tar.gz -f
 }
 
